@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Kamil Szkaradnik</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Kamil Szkaradnik</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html" data-lang="about-me">About Me</a></li>
+                    <li class="nav-item"><a class="nav-link" href="experience.html" data-lang="experience">Experience</a></li>
+                    <li class="nav-item"><a class="nav-link" href="projects.html" data-lang="projects">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="education.html" data-lang="education">Education</a></li>
+					<li class="nav-item"><a class="nav-link" href="certifications.html" data-lang="certifications">Certifications</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html" data-lang="contact">Contact</a></li>
+                </ul>
+                <div class="ms-3">
+                    <button class="btn btn-outline-light btn-sm" onclick="switchLanguage('en')">EN</button>
+                    <button class="btn btn-outline-light btn-sm" onclick="switchLanguage('pl')">PL</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header Section -->
+    <header class="bg-primary text-white text-center py-5">
+        <div class="container">
+            <h1>Kamil Szkaradnik</h1>
+            <p data-lang="header-desc">Implementation Consultant | Biomedical Engineer | Software Developer</p>
+            <a href="contact.html" class="btn btn-light btn-lg mt-3" data-lang="get-in-touch">Get in Touch</a>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container my-5">
+    <h2 data-lang="contact-me">Contact Me</h2>
+    <p data-lang="contact-description">
+        If you have any questions, collaboration ideas, or just want to get in touch, feel free to reach out via email, phone, or the form below!
+    </p>
+
+    <!-- Contact Information -->
+    <div class="row mb-5">
+        <div class="col-md-6">
+            <h5 data-lang="contact-details">Contact Details</h5>
+            <ul class="list-unstyled">
+                <li><strong>Email:</strong> <a href="mailto:kamilszkaradnik@gmail.com">kamilszkaradnik@gmail.com</a></li>
+                <li><strong>Phone:</strong> +48 785 847 551</li>
+                <li><strong>Location:</strong> Piekary Śląskie, Poland</li>
+                <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/kamil-szkaradnik-977b1a1a6/">linkedin.com</a></li>
+                <li><strong>GitHub:</strong> <a href="https://github.com/kobango">github.com</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Contact Form -->
+    <div class="row">
+        <div class="col-md-8">
+            <h5 data-lang="contact-form">Send a Message</h5>
+            <form id="contact-form">
+                <div class="mb-3">
+                    <label for="name" class="form-label" data-lang="your-name">Your Name</label>
+                    <input type="text" name="from_name" class="form-control" id="name" required>
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label" data-lang="your-email">Your Email</label>
+                    <input type="email" name="from_email" class="form-control" id="email" required>
+                </div>
+                <div class="mb-3">
+                    <label for="message" class="form-label" data-lang="your-message">Your Message</label>
+                    <textarea name="message" class="form-control" id="message" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary" data-lang="send-message">Send Message</button>
+            </form>
+            <div id="form-response" class="mt-3" style="display: none;"></div>
+        </div>
+    </div>
+	</main>
+	
+	
+
+    <!-- Footer Section -->
+    <footer class="bg-dark text-white text-center py-3">
+        <p>&copy; 2024 Kamil Szkaradnik. <span data-lang="footer-rights">All Rights Reserved.</span></p>
+    </footer>
+
+    <!-- Language Script -->
+    <script>
+        const translations = {
+    en: {
+        "contact-me": "Contact Me",
+        "contact-description": "If you have any questions, collaboration ideas, or just want to get in touch, feel free to reach out via email, phone, or the form below!",
+        "contact-details": "Contact Details",
+        "contact-form": "Send a Message",
+        "your-name": "Your Name",
+        "your-email": "Your Email",
+        "your-message": "Your Message",
+        "send-message": "Send Message"
+    },
+    pl: {
+        "contact-me": "Kontakt",
+        "contact-description": "Jeśli masz pytania, pomysły na współpracę lub po prostu chcesz się skontaktować, napisz e-mail, zadzwoń lub skorzystaj z poniższego formularza!",
+        "contact-details": "Dane Kontaktowe",
+        "contact-form": "Wyślij Wiadomość",
+        "your-name": "Twoje Imię",
+        "your-email": "Twój Email",
+        "your-message": "Twoja Wiadomość",
+        "send-message": "Wyślij Wiadomość"
+		}
+	};
+
+        function switchLanguage(lang) {
+            document.querySelectorAll("[data-lang]").forEach(element => {
+                const key = element.getAttribute("data-lang");
+                if (translations[lang] && translations[lang][key]) {
+                    element.textContent = translations[lang][key];
+                }
+            });
+        }
+    </script>
+	<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+	<script>
+    // Initialize EmailJS
+    emailjs.init("B-fIbmVFU6EJSHZWL");
+
+    const form = document.getElementById("contact-form");
+    const responseDiv = document.getElementById("form-response");
+
+    form.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        const formData = new FormData(form);
+
+        emailjs.send("service_p2u8c2t", "template_aab2sum", Object.fromEntries(formData))
+            .then(function () {
+                responseDiv.textContent = "Message sent successfully!";
+                responseDiv.style.display = "block";
+                responseDiv.style.color = "green";
+                form.reset();
+            })
+            .catch(function (error) {
+                responseDiv.textContent = "Failed to send message. Please try again.";
+                responseDiv.style.display = "block";
+                responseDiv.style.color = "red";
+                console.error("EmailJS Error:", error);
+            });
+    });
+</script>
+</body>
+</html>
