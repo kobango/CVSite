@@ -26,3 +26,26 @@ header p {
 header a.btn {
     margin-top: 20px;
 }
+
+/* Standardowy widok (desktop) */
+.language-buttons {
+    display: flex;
+    justify-content: flex-end; /* Wyrównanie do prawej */
+    align-items: center;
+}
+
+/* Widok mobilny */
+@media (max-width: 768px) {
+    /* Linki nawigacyjne ustawione na lewo */
+    .navbar-nav {
+        flex-direction: column; /* Linki w kolumnie */
+        align-items: flex-start; /* Wyrównane do lewej */
+    }
+
+    /* Przyciski języka wyśrodkowane na dole */
+    .language-buttons {
+        justify-content: center; /* Wyśrodkowanie */
+        margin-top: 15px;
+        width: 100%; /* Przyciski na pełną szerokość */
+    }
+}
