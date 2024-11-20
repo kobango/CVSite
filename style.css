@@ -48,4 +48,11 @@ header a.btn {
         margin-top: 15px;
         width: 100%; /* Przyciski na pełną szerokość */
     }
+	
+	/*Pasek quick links*/
+	.quick-links .btn {
+        width: 100%; /* Przyciski zajmują całą szerokość */
+    }
 }
+
+@
