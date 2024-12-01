@@ -5,6 +5,13 @@ header {
     text-align: center;
 }
 
+body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+
 /*header{
     background: url('IMG2.webp') no-repeat center center;
     background-size: cover;
@@ -13,6 +20,9 @@ header {
     text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7); 
 }
 */
+footer {
+margin-top: auto;
+}
 
 header h1 {
     font-size: 3rem;
